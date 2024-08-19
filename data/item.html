@@ -109,7 +109,6 @@
     searchButton.addEventListener('click', function() {
         const searchTerm = searchInput.value;
         console.log('Searching for: ' + searchTerm);
-        // 實現搜索功能
     });
 
     pageNumbers.forEach(page => {
@@ -117,7 +116,6 @@
             pageNumbers.forEach(p => p.classList.remove('active'));
             this.classList.add('active');
             console.log('Loading page ' + this.textContent);
-            // 實現分頁功能
         });
     });
 
@@ -125,7 +123,6 @@
         card.addEventListener('click', function() {
             const itemName = this.querySelector('.item-name').textContent;
             console.log('Displaying details for: ' + itemName);
-            // 實現道具詳細信息展示
         });
     });
 });</script></body></html>

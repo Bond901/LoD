@@ -100,7 +100,6 @@
     searchButton.addEventListener('click', function() {
         const searchTerm = searchInput.value;
         console.log('Searching for location: ' + searchTerm);
-        // Implement search functionality here
     });
 
     pageNumbers.forEach(page => {
@@ -108,17 +107,14 @@
             pageNumbers.forEach(p => p.classList.remove('active'));
             this.classList.add('active');
             console.log('Loading locations page ' + this.textContent);
-            // Implement pagination functionality here
         });
     });
 
-    // Add click event listeners to location cards
     const locationCards = document.querySelectorAll('.location-card');
     locationCards.forEach(card => {
         card.addEventListener('click', function() {
             const locationName = this.querySelector('.location-name').textContent;
             console.log('Loading details for: ' + locationName);
-            // Implement location details page navigation here
         });
     });
 });</script></div></body></html>
