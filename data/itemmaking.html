@@ -1,0 +1,153 @@
+<html>
+<head>
+    <base href="https://lineagedatabase.example.com/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>道具製作 Item Making</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+		.header h1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            color: #ffd700;
+        }
+        .blueprint-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .blueprint-item {
+            background-color: #3c3c3c;
+            border-radius: 5px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+        .blueprint-item:hover {
+            transform: scale(1.05);
+        }
+        .blueprint-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        .blueprint-description {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .blueprint-requirements {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #a0a0a0;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        #search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #3c3c3c;
+            color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+	<h1>道具製作</h1>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="搜索道具...">
+    </div>
+    <div class="blueprint-container" id="blueprint-list">
+        <!-- Blueprint items will be dynamically added here -->
+    </div>
+</div>
+
+<script>
+const blueprints = [
+    {
+        title: "龍鱗護甲",
+        description: "使用稀有的龍鱗製作的堅固護甲，提供極高的防禦力和魔法抗性。",
+        requirements: "需要：龍鱗 x10，魔法絲綢 x5，精煉鋼 x3"
+    },
+    {
+        title: "魔法增幅法杖",
+        description: "能夠顯著提高施法者魔法威力的法杖，由稀有的魔法水晶製成。",
+        requirements: "需要：魔法水晶 x3，古代樹木 x2，星塵 x1"
+    },
+    {
+        title: "隱形斗篷",
+        description: "使用特殊材料編織而成的斗篷，能夠在短時間內使佩戴者隱形。",
+        requirements: "需要：幽靈絲 x5，月光草 x3，隱形墨水 x1"
+    },
+    {
+        title: "雷霆之劍",
+        description: "蘊含雷電之力的強大武器，能夠對敵人造成額外的雷電傷害。",
+        requirements: "需要：雷霆結晶 x2，精鋼 x5，魔法符文 x1"
+    },
+    {
+        title: "生命恢復藥水",
+        description: "能夠快速恢復大量生命值的高級藥水，在危急時刻非常有用。",
+        requirements: "需要：紅色草藥 x5，魔法蘑菇 x3，純淨水 x1"
+    }
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const blueprintList = document.getElementById('blueprint-list');
+    const searchInput = document.getElementById('search-input');
+
+    function renderBlueprints(items) {
+        blueprintList.innerHTML = '';
+        items.forEach(item => {
+            const blueprintItem = document.createElement('div');
+            blueprintItem.className = 'blueprint-item';
+            blueprintItem.innerHTML = `
+                <div class="blueprint-title">${item.title}</div>
+                <div class="blueprint-description">${item.description}</div>
+                <div class="blueprint-requirements">${item.requirements}</div>
+            `;
+            blueprintList.appendChild(blueprintItem);
+        });
+    }
+
+    renderBlueprints(blueprints);
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const filteredBlueprints = blueprints.filter(blueprint => 
+            blueprint.title.toLowerCase().includes(searchTerm) ||
+            blueprint.description.toLowerCase().includes(searchTerm) ||
+            blueprint.requirements.toLowerCase().includes(searchTerm)
+        );
+        renderBlueprints(filteredBlueprints);
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <base href="https://lineagedatabase.example.com/monsters/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怪物資料 Monster Data</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            height: 100%; /* 使 body 覆蓋整個視窗高度 */
+            overflow: auto; /* 啟用全局捲動 */
+        }
+
+        .content {
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100%; /* 確保內容區域覆蓋整個視窗 */
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #3c3c3c;
+            color: #e0e0e0;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffd700;
+            border: none;
+            cursor: pointer;
+        }
+
+        .monster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .monster-card {
+            background-color: #3c3c3c;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .monster-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .monster-icon {
+            width: 100%;
+            height: 150px;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .monster-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #ffd700;
+        }
+
+        .monster-info {
+            font-size: 14px;
+            color: #b0b0b0;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .page-number {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: #3c3c3c;
+            cursor: pointer;
+        }
+
+        .page-number.active {
+            background-color: #ffd700;
+            color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>怪物資料庫</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索怪物...">
+            <button>搜索</button>
+        </div>
+        <div class="monster-grid">
+            <div class="monster-card" onclick="showMonsterDetails('orc')">
+                <div class="monster-icon">👹</div>
+                <div class="monster-name">獸人</div>
+                <div class="monster-info">
+                    等級: 10-15<br>
+                    地點: 獸人村莊
+                </div>
+            </div>
+            <div class="monster-card" onclick="showMonsterDetails('skeleton')">
+                <div class="monster-icon">💀</div>
+                <div class="monster-name">骷髏戰士</div>
+                <div class="monster-info">
+                    等級: 20-25<br>
+                    地點: 遺忘墓地
+                </div>
+            </div>
+            <div class="monster-card" onclick="showMonsterDetails('dragon')">
+                <div class="monster-icon">🐉</div>
+                <div class="monster-name">巨龍</div>
+                <div class="monster-info">
+                    等級: 50-60<br>
+                    地點: 龍之峽谷
+                </div>
+            </div>
+            <div class="monster-card" onclick="showMonsterDetails('goblin')">
+                <div class="monster-icon">👺</div>
+                <div class="monster-name">哥布林</div>
+                <div class="monster-info">
+                    等級: 5-10<br>
+                    地點: 綠林地區
+                </div>
+            </div>
+            <div class="monster-card" onclick="showMonsterDetails('werewolf')">
+                <div class="monster-icon">🐺</div>
+                <div class="monster-name">狼人</div>
+                <div class="monster-info">
+                    等級: 30-35<br>
+                    地點: 月光森林
+                </div>
+            </div>
+            <div class="monster-card" onclick="showMonsterDetails('ghost')">
+                <div class="monster-icon">👻</div>
+                <div class="monster-name">幽靈</div>
+                <div class="monster-info">
+                    等級: 15-20<br>
+                    地點: 廢棄城堡
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <div class="page-number active">1</div>
+            <div class="page-number">2</div>
+            <div class="page-number">3</div>
+            <div class="page-number">4</div>
+            <div class="page-number">5</div>
+        </div>
+    </div>
+    <script>
+        function showMonsterDetails(monsterId) {
+            console.log('Showing details for monster: ' + monsterId);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchButton = document.querySelector('.search-bar button');
+            const searchInput = document.querySelector('.search-bar input');
+            const pageNumbers = document.querySelectorAll('.page-number');
+
+            searchButton.addEventListener('click', function() {
+                const searchTerm = searchInput.value;
+                console.log('Searching for monster: ' + searchTerm);
+            });
+
+            pageNumbers.forEach(page => {
+                page.addEventListener('click', function() {
+                    pageNumbers.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                    console.log('Loading monster page ' + this.textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

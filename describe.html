@@ -1,0 +1,116 @@
+<html>
+<head>
+    <base href="https://lineagedatabase.example.com/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>說明 Describe</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        .faq-answer {
+            line-height: 1.6;
+        }
+        .guide-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .guide-item {
+            background-color: #3c3c3c;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .guide-item:hover {
+            background-color: #4c4c4c;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">說明中心</div>
+    <p>歡迎來到LoD的說明中心。這裡您可以找到關於遊戲和我們網站的常見問題解答，以及一些有用的遊戲指南。</p>
+    
+    <h2>常見問題</h2>
+    <div class="faq-item">
+        <div class="faq-question">Q: 如何使用這個網站？</div>
+        <div class="faq-answer">A: 我們的網站設計得非常直觀。使用選單可以瀏覽不同的部分，如武器、防具、怪物等。每個頁面上方都有搜索欄，可以快速找到您需要的信息。</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Q: 網站上的資料多久更新一次？</div>
+        <div class="faq-answer">A: 我們努力保持資料的即時性。通常在遊戲更新後的24小時內，我們就會更新相應的資訊。對於重大更新，我們會在首頁發布公告。</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Q: 我可以提交錯誤報告或建議嗎？</div>
+        <div class="faq-answer">A: 當然可以！我們非常歡迎玩家的反饋。請加入社群「Discord」。</div>
+    </div>
+    
+    <h2>遊戲指南</h2>
+    <ul class="guide-list">
+		<li class="guide-item" onclick="loadGuide('newbie')">新手入門指南</li>
+        <li class="guide-item" onclick="loadGuide('combat')">戰鬥系統詳解</li>
+        <li class="guide-item" onclick="loadGuide('crafting')">製作系統攻略</li>
+        <li class="guide-item" onclick="loadGuide('pvp')">PVP策略與技巧</li>
+        <li class="guide-item" onclick="loadGuide('economy')">遊戲經濟與交易指南</li>
+    </ul>
+</div>
+
+<script>
+function loadGuide(guideType) {
+    console.log('Loading guide: ' + guideType);
+    // Here you would typically load the corresponding guide content
+    // For example:
+    // fetch('/api/guides/' + guideType)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // Update the page content with the fetched guide data
+    //     });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const guideItems = document.querySelectorAll('.guide-item');
+
+    guideItems.forEach(item => {
+        item.addEventListener('click', function() {
+            guideItems.forEach(i => i.style.backgroundColor = '#3c3c3c');
+            this.style.backgroundColor = '#4c4c4c';
+            console.log('Guide selected: ' + this.textContent);
+        });
+    });
+});
+</script>
+
+</body>
+</html>

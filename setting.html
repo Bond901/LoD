@@ -1,0 +1,302 @@
+<html>
+<head>
+    <base href="https://lineagedatabase.example.com/server-settings/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本設定 Setting</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .setting-card {
+            background-color: #3c3c3c;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .setting-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+        .setting-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        .setting-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            margin-bottom: 5px;
+        }
+        .setting-value {
+            font-size: 16px;
+            color: #ffffff;
+			margin-bottom: 5px;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .class-limit {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        .class-limit th, .class-limit td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+        .class-limit th {
+            background-color: #4c4c4c;
+            color: #ffd700;
+        }
+        .class-limit td {
+            background-color: #3c3c3c;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">伺服器設定 Server</div>
+    <div class="settings-grid">
+        <div class="setting-card">
+            <div class="setting-title">經驗倍率.ExpRate</div>
+            <div class="setting-description">影響玩家獲得的經驗值</div>
+            <div class="setting-value">
+                <span class="tooltip">50x
+                    <span class="tooltiptext">比標準伺服器快50.0倍</span>
+                </span>
+            </div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">物品掉率.DropItemsRate</div>
+            <div class="setting-description">影響怪物掉落物品的機率</div>
+            <div class="setting-value">
+                <span class="tooltip">1x
+                    <span class="tooltiptext">比標準伺服器高1.0倍</span>
+                </span>
+            </div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">金錢倍率.DropAdenaRate</div>
+            <div class="setting-description">影響怪物掉落金錢的數量</div>
+            <div class="setting-value">
+                <span class="tooltip">8x
+                    <span class="tooltiptext">比標準伺服器多8.0倍</span>
+                </span>
+            </div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">正義倍率.LawfulRate</div>
+            <div class="setting-description">影響玩家獲得的正義值</div>
+            <div class="setting-value">2x</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">友好倍率.KarmaRate</div>
+            <div class="setting-description">影響玩家獲得的友好度</div>
+            <div class="setting-value">3x</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">負重倍率.WeightRate</div>
+            <div class="setting-description">影響玩家的負重限制</div>
+            <div class="setting-value">3x</div>
+        </div>
+		<div class="setting-card">
+            <div class="setting-title">最大等級.MaxLevel</div>
+            <div class="setting-description">玩家可達到的最高等級</div>
+            <div class="setting-value">
+                <span class="tooltip">level 99
+                    <span class="tooltiptext">標準伺服器設定</span>
+                </span>
+            </div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">能力值上限.Power</div>
+            <div class="setting-description">玩家的能力值上限</div>
+            <div class="setting-value">25</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">萬能藥上限.Medicine Power</div>
+            <div class="setting-description">使用萬能藥後的能力上限</div>
+            <div class="setting-value">35</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">萬能藥瓶數.Medicine Usage</div>
+            <div class="setting-description">每次使用的萬能藥瓶數量</div>
+            <div class="setting-value">10</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">武器強化.EnchantChance Weapon</div>
+            <div class="setting-description">超過安定值，武器的強化成功機率</div>
+            <div class="setting-value">10%</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">防具強化.EnchantChance Armor</div>
+            <div class="setting-description">超過安定值，防具的強化成功機率</div>
+            <div class="setting-value">10%</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">屬性強化.EnchantChance Attr</div>
+            <div class="setting-description">武器屬性的強化成功機率</div>
+            <div class="setting-value">10%</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">飾品強化.EnchantChance Accessory</div>
+            <div class="setting-description">飾品的強化成功機率</div>
+            <div class="setting-value">10%</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">公頻廣播.WorldChat</div>
+            <div class="setting-description">使用公頻的等級限制</div>
+            <div class="setting-value">
+                <span class="tooltip">level 45
+                    <span class="tooltiptext">每次使用扣除金幣1000</span>
+                </span>
+            </div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">記憶座標.Bookmark</div>
+            <div class="setting-description">記憶座標的上限</div>
+            <div class="setting-value">60</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">個人倉庫.Warehouse</div>
+            <div class="setting-description">個人倉庫的容量</div>
+            <div class="setting-value">100</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">血盟倉庫.Clan Warehouse</div>
+            <div class="setting-description">血盟倉庫的容量</div>
+            <div class="setting-value">100</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">盟屋回血.ClanHouse HPR</div>
+            <div class="setting-description">盟屋的回血量</div>
+            <div class="setting-value">+25</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">盟屋回魔.ClanHouse MPR</div>
+            <div class="setting-description">盟屋的回魔量</div>
+            <div class="setting-value">+15</div>
+        </div>
+    </div>
+    <br>
+    <div class="header">人物設定 Character</div>
+    <div class="settings-grid">
+        <div class="setting-card">
+            <div class="setting-title">王族.Royal</div>
+            <div class="setting-description">血量上限.MaxHP</div>
+            <div class="setting-value">1400</div>
+            <div class="setting-description">魔力上限.MaxMP</div>
+            <div class="setting-value">800</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">騎士.Knight</div>
+            <div class="setting-description">血量上限.MaxHP</div>
+            <div class="setting-value">2000</div>
+            <div class="setting-description">魔力上限.MaxMP</div>
+            <div class="setting-value">600</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">妖精.Elf</div>
+            <div class="setting-description">血量上限.MaxHP</div>
+            <div class="setting-value">1400</div>
+            <div class="setting-description">魔力上限.MaxMP</div>
+            <div class="setting-value">900</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">法師.Wizard</div>
+            <div class="setting-description">血量上限.MaxHP</div>
+            <div class="setting-value">1000</div>
+            <div class="setting-description">魔力上限.MaxMP</div>
+            <div class="setting-value">1200</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">黑暗妖精.DarkElf</div>
+            <div class="setting-description">血量上限.MaxHP</div>
+            <div class="setting-value">1400</div>
+            <div class="setting-description">魔力上限.MaxMP</div>
+            <div class="setting-value">900</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">龍騎士.DragonKnight</div>
+            <div class="setting-description">血量上限.MaxHP</div>
+            <div class="setting-value">1800</div>
+            <div class="setting-description">魔力上限.MaxMP</div>
+            <div class="setting-value">600</div>
+        </div>
+        <div class="setting-card">
+            <div class="setting-title">幻術師.Illusionist</div>
+            <div class="setting-description">血量上限.MaxHP</div>
+            <div class="setting-value">1100</div>
+            <div class="setting-description">魔力上限.MaxMP</div>
+            <div class="setting-value">1100</div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const settingCards = document.querySelectorAll('.setting-card');
+    
+    // Add hover effect for setting cards
+    settingCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#4c4c4c';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '#3c3c3c';
+        });
+    });
+});
+</script>
+</body>
+</html>

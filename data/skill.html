@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技能資料 Skill Data</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            height: 100%;
+        }
+        .content {
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100%; /* 確保內容區域覆蓋整個視窗 */
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #3c3c3c;
+            color: #e0e0e0;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffd700;
+            border: none;
+            cursor: pointer;
+        }
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .skill-card {
+            background-color: #3c3c3c;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+        .skill-icon {
+        width: 50px;
+        height: 50px;
+        background-color: #ffd700;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 24px;
+        }
+        .skill-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        .skill-description {
+            font-size: 14px;
+            color: #b0b0b0;
+        }
+        .skill-stats {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #e0e0e0;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .page-number {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: #3c3c3c;
+            cursor: pointer;
+        }
+        .page-number.active {
+            background-color: #ffd700;
+            color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>技能資料庫</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索技能...">
+            <button>搜索</button>
+        </div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-icon">🔥</div>
+                <div class="skill-name">烈焰衝擊</div>
+                <div class="skill-description">釋放強大的火焰能量，對敵人造成大量傷害。</div>
+                <div class="skill-stats">
+                    消耗MP: 50 | 冷卻時間: 30秒 | 傷害: 200-300
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">❄️</div>
+                <div class="skill-name">冰霜新星</div>
+                <div class="skill-description">在周圍釋放冰霜能量，凍結並減緩敵人移動速度。</div>
+                <div class="skill-stats">
+                    消耗MP: 40 | 冷卻時間: 25秒 | 效果範圍: 5米
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">⚡</div>
+                <div class="skill-name">雷霆一擊</div>
+                <div class="skill-description">召喚雷電攻擊目標，有機會造成麻痺效果。</div>
+                <div class="skill-stats">
+                    消耗MP: 60 | 冷卻時間: 40秒 | 麻痺機率: 30%
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🛡️</div>
+                <div class="skill-name">堅固防禦</div>
+                <div class="skill-description">增強自身防禦力，減少受到的傷害。</div>
+                <div class="skill-stats">
+                    消耗MP: 30 | 持續時間: 60秒 | 減傷比例: 20%
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💨</div>
+                <div class="skill-name">疾風步</div>
+                <div class="skill-description">短時間內大幅提升移動速度。</div>
+                <div class="skill-stats">
+                    消耗MP: 20 | 冷卻時間: 45秒 | 速度提升: 50%
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🌪️</div>
+                <div class="skill-name">旋風斬</div>
+                <div class="skill-description">快速旋轉武器，對周圍敵人造成多重傷害。</div>
+                <div class="skill-stats">
+                    消耗MP: 45 | 冷卻時間: 35秒 | 命中次數: 5次
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <div class="page-number active">1</div>
+            <div class="page-number">2</div>
+            <div class="page-number">3</div>
+            <div class="page-number">4</div>
+            <div class="page-number">5</div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchButton = document.querySelector('.search-bar button');
+        const searchInput = document.querySelector('.search-bar input');
+        const pageNumbers = document.querySelectorAll('.page-number');
+        const skillCards = document.querySelectorAll('.skill-card');
+
+        searchButton.addEventListener('click', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            skillCards.forEach(card => {
+                const skillName = card.querySelector('.skill-name').textContent.toLowerCase();
+                const skillDescription = card.querySelector('.skill-description').textContent.toLowerCase();
+                if (skillName.includes(searchTerm) || skillDescription.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        pageNumbers.forEach(page => {
+            page.addEventListener('click', function() {
+                pageNumbers.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                console.log('Loading skill page ' + this.textContent);
+                // 在此處實現分頁功能
+            });
+        });
+
+        skillCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const skillName = this.querySelector('.skill-name').textContent;
+                console.log('Skill details for ' + skillName + ' loaded');
+                // 在此處加載和顯示選中技能的詳細資訊
+            });
+        });
+    });
+    </script>
+</body>
+</html>

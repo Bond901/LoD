@@ -1,0 +1,202 @@
+<html>
+<head>
+    <base href="https://lineagedatabase.example.com/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPC資料 NPC Data</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+		.header h1 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #3c3c3c;
+            color: #e0e0e0;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffd700;
+            border: none;
+            cursor: pointer;
+        }
+        .npc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .npc-card {
+            background-color: #3c3c3c;
+            border-radius: 8px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .npc-card:hover {
+            transform: translateY(-5px);
+        }
+        .npc-image {
+            width: 100%;
+            height: 150px;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+        }
+        .npc-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .npc-location {
+            font-size: 14px;
+            color: #ffd700;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #1e1e1e;
+        }
+        .page-number {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: #3c3c3c;
+            cursor: pointer;
+        }
+        .page-number.active {
+            background-color: #ffd700;
+            color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+	<h1>NPC資料庫</h1>
+    <div class="search-bar">
+        <input type="text" placeholder="搜索NPC...">
+        <button>搜索</button>
+    </div>
+    <div class="npc-grid">
+        <div class="npc-card">
+            <div class="npc-image">👨‍🦳</div>
+            <div class="npc-name">達克巫師</div>
+            <div class="npc-location">亞丁城</div>
+        </div>
+        <div class="npc-card">
+            <div class="npc-image">👩‍🦰</div>
+            <div class="npc-name">莉莉</div>
+            <div class="npc-location">古魯丁村莊</div>
+        </div>
+        <div class="npc-card">
+            <div class="npc-image">🧙‍♂️</div>
+            <div class="npc-name">法蘭</div>
+            <div class="npc-location">妖精森林</div>
+        </div>
+        <div class="npc-card">
+            <div class="npc-image">👨‍🚀</div>
+            <div class="npc-name">傑克</div>
+            <div class="npc-location">說話之島</div>
+        </div>
+        <div class="npc-card">
+            <div class="npc-image">👸</div>
+            <div class="npc-name">艾芙琳女王</div>
+            <div class="npc-location">亞丁城堡</div>
+        </div>
+        <div class="npc-card">
+            <div class="npc-image">🧝‍♀️</div>
+            <div class="npc-name">妖精公主</div>
+            <div class="npc-location">精靈森林</div>
+        </div>
+        <div class="npc-card">
+            <div class="npc-image">👨‍🏫</div>
+            <div class="npc-name">大衛教授</div>
+            <div class="npc-location">亞丁大學</div>
+        </div>
+        <div class="npc-card">
+            <div class="npc-image">🧙‍♀️</div>
+            <div class="npc-name">賽拉法師</div>
+            <div class="npc-location">歐瑞村莊</div>
+        </div>
+    </div>
+    <div class="pagination">
+        <div class="page-number active">1</div>
+        <div class="page-number">2</div>
+        <div class="page-number">3</div>
+        <div class="page-number">4</div>
+        <div class="page-number">5</div>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchButton = document.querySelector('.search-bar button');
+    const searchInput = document.querySelector('.search-bar input');
+    const pageNumbers = document.querySelectorAll('.page-number');
+    const npcCards = document.querySelectorAll('.npc-card');
+
+    searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value.toLowerCase();
+        console.log('Searching for NPC: ' + searchTerm);
+        npcCards.forEach(card => {
+            const npcName = card.querySelector('.npc-name').textContent.toLowerCase();
+            if (npcName.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+    pageNumbers.forEach(page => {
+        page.addEventListener('click', function() {
+            pageNumbers.forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            console.log('Loading NPC page ' + this.textContent);
+        });
+    });
+
+    npcCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const npcName = this.querySelector('.npc-name').textContent;
+            console.log('Viewing details for NPC: ' + npcName);
+        });
+    });
+});
+</script>
+</body>
+</html>

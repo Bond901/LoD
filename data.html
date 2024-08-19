@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲資料庫 Data</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            height: 100%;
+        }
+        .content {
+            padding: 20px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #3c3c3c;
+            color: #e0e0e0;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffd700;
+            border: none;
+            cursor: pointer;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .category-item {
+            background-color: #3c3c3c;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #e0e0e0;
+        }
+        .category-item:hover {
+            background-color: #4c4c4c;
+            transform: translateY(-5px);
+        }
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .page-number {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: #3c3c3c;
+            cursor: pointer;
+        }
+        .page-number.active {
+            background-color: #ffd700;
+            color: #1e1e1e;
+        }
+        h1 {
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>遊戲資料庫</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索遊戲資料...">
+            <button>搜索</button>
+        </div>
+        <div class="category-grid">
+            <a href="data/weapon.html" class="category-item">
+                <div class="category-icon">⚔️</div>
+                <div>武器</div>
+            </a>
+            <a href="data/armor.html" class="category-item">
+                <div class="category-icon">🛡️</div>
+                <div>防具</div>
+            </a>
+            <a href="data/monster.html" class="category-item">
+                <div class="category-icon">👹</div>
+                <div>怪物</div>
+            </a>
+            <a href="data/item.html" class="category-item">
+                <div class="category-icon">🎒</div>
+                <div>道具</div>
+            </a>
+            <a href="data/skill.html" class="category-item">
+                <div class="category-icon">✨</div>
+                <div>技能</div>
+            </a>
+            <a href="data/quest.html" class="category-item">
+                <div class="category-icon">📜</div>
+                <div>任務</div>
+            </a>
+            <a href="data/npc.html" class="category-item">
+                <div class="category-icon">🧑</div>
+                <div>NPC</div>
+            </a>
+            <a href="data/map.html" class="category-item">
+                <div class="category-icon">🗺️</div>
+                <div>地圖</div>
+            </a>
+			<a href="data/itemmaking.html" class="category-item">
+            <div class="category-icon">🔨</div>
+            <div>製作</div>
+        </a>
+        </div>
+        <div class="pagination">
+            <div class="page-number active">1</div>
+            <div class="page-number">2</div>
+            <div class="page-number">3</div>
+            <div class="page-number">4</div>
+            <div class="page-number">5</div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchButton = document.querySelector('.search-bar button');
+        const searchInput = document.querySelector('.search-bar input');
+        const pageNumbers = document.querySelectorAll('.page-number');
+
+        searchButton.addEventListener('click', function() {
+            const searchTerm = searchInput.value;
+            console.log('Searching for: ' + searchTerm);
+            // 在此處實現搜索功能
+        });
+
+        pageNumbers.forEach(page => {
+            page.addEventListener('click', function() {
+                pageNumbers.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                console.log('Loading page ' + this.textContent);
+                // 在此處實現分頁功能
+            });
+        });
+    });
+    </script>
+</body>
+</html>

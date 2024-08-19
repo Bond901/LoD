@@ -1,0 +1,126 @@
+<html>
+<head>
+    <base href="https://lineagedatabase.example.com/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>維護更新</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            color: #ffd700;
+        }
+        .maintenance-item {
+            background-color: #3c3c3c;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .maintenance-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        .maintenance-date {
+            font-size: 14px;
+            color: #a0a0a0;
+            margin-bottom: 10px;
+        }
+        .maintenance-description {
+            line-height: 1.6;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .status-active {
+            background-color: #ff4136;
+        }
+        .status-scheduled {
+            background-color: #ffdc00;
+        }
+        .status-completed {
+            background-color: #2ecc40;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">維護更新</div>
+    <p>這裡列出了最近的遊戲維護和更新情況。請注意，維護時間可能會有所變動。</p>
+    <div class="maintenance-item">
+        <div class="maintenance-title">
+            <span class="status-indicator status-active"></span>
+            緊急維護：修復交易系統漏洞
+        </div>
+        <div class="maintenance-date">開始時間：2023年6月15日 14:00 (GMT+8) | 預計持續時間：3小時</div>
+        <div class="maintenance-description">
+            親愛的玩家們，我們發現了交易系統中的一個嚴重漏洞，為了保護遊戲經濟的平衡，我們需要進行緊急維護。維護期間，所有伺服器將暫時關閉。我們深感歉意，並會盡快完成修復工作。
+        </div>
+    </div>
+
+    <div class="maintenance-item">
+        <div class="maintenance-title">
+            <span class="status-indicator status-scheduled"></span>
+            計劃維護：新版本 1.5 更新
+        </div>
+        <div class="maintenance-date">開始時間：2023年6月20日 02:00 (GMT+8) | 預計持續時間：8小時</div>
+        <div class="maintenance-description">
+            我們即將推出激動人心的 1.5 版本更新！本次更新將帶來全新的地圖區域、全新職業平衡調整，以及多項遊戲體驗優化。維護期間，所有遊戲功能將暫時無法使用。更新內容詳情請關注我們的官方網站。
+        </div>
+    </div>
+
+    <div class="maintenance-item">
+        <div class="maintenance-title">
+            <span class="status-indicator status-completed"></span>
+            已完成維護：伺服器穩定性提升
+        </div>
+        <div class="maintenance-date">完成時間：2023年6月10日 06:30 (GMT+8) | 實際持續時間：4.5小時</div>
+        <div class="maintenance-description">
+            我們已經成功完成了伺服器穩定性的提升工作。這次維護主要針對高峰時段的伺服器負載進行了優化，應該能顯著改善遊戲體驗。如果您在遊戲中仍然遇到任何問題，請通過客戶支援與我們聯繫。感謝您的耐心等待！
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('.menu-item');
+    const header = document.querySelector('.header');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            menuItems.forEach(i => i.style.color = '#e0e0e0');
+            this.style.color = '#ffd700';
+            console.log(this.textContent + ' page loaded');
+        });
+    });
+
+    header.addEventListener('click', function() {
+        console.log('Home page loaded');
+    });
+});
+</script>
+
+</body>
+</html>

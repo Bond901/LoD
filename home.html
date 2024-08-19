@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoD Guide Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .feature-card {
+            background-color: #3c3c3c;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none; /* 取消連結下劃線 */
+            color: inherit; /* 繼承父元素的顏色 */
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+        .feature-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffffff; /* 將文字顏色改為白色 */
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+        h1 {
+            color: #ffd700;
+            margin: 20px; /* 調整標題的邊距 */
+            font-size: 24px; /* 調整標題字體大小 */
+        }
+    </style>
+</head>
+<body>
+    <h1>LoD 指南</h1>
+    <div class="feature-grid">
+        <a href="setting.html" class="feature-card">
+            <div class="feature-icon">🛠️</div>
+            <div class="feature-title">基本設置</div>
+            <div class="feature-description">查看經驗倍率、武防強化機率...等等伺服器設定，熟悉設定遊戲體驗更佳。</div>
+        </a>
+        <a href="update.html" class="feature-card">
+            <div class="feature-icon">🔔</div>
+            <div class="feature-title">最近更新</div>
+            <div class="feature-description">隨時掌握遊戲的最新變化和更新。我們的維護頁面提供及時的遊戲公告和補丁說明。</div>
+        </a>
+        <a href="data/map.html" class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <div class="feature-title">互動地圖</div>
+            <div class="feature-description">使用我們的互動地圖功能，輕鬆導航遊戲世界。找到隱藏的寶藏、任務位置和重要地標。</div>
+        </a>
+        <a href="data.html" class="feature-card">
+            <div class="feature-icon">📚</div>
+            <div class="feature-title">遊戲資料庫</div>
+            <div class="feature-description">探索豐富的遊戲數據，包括怪物、武器、防具和道具的詳細信息。讓您在遊戲中做出明智的決策。</div>
+        </a>
+        <a href="discord.html" class="feature-card">
+            <div class="feature-icon">💬</div>
+            <div class="feature-title">社區論壇</div>
+            <div class="feature-description">加入我們活躍的玩家社區，分享經驗、尋求建議，或者參與有趣的討論。</div>
+        </a>
+        <a href="youtube.html" class="feature-card">
+            <div class="feature-icon">🎥</div>
+            <div class="feature-title">視頻攻略</div>
+            <div class="feature-description">觀看我們精心製作的YouTube視頻，獲取專業玩家的遊戲技巧、策略和秘訣。</div>
+        </a>
+    </div>
+</body>
+</html>
