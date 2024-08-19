@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			'vegetation': '植物',
 			'gold': '金',
 			'paper': '紙',
+			'copper': '銅',
 			};
 			const materialInChinese = materialMap[armor.material] || armor.material; // 材質轉換成中文			
 			// 類型中文
@@ -212,16 +213,16 @@ let greaterDisplay = '';
 
 switch (greaterValue) {
     case 3:
-        greaterDisplay = '<br>等級: 特級';
+        greaterDisplay = '等級: 特級<br>';
         break;
     case 2:
-        greaterDisplay = '<br>等級: 中級';
+        greaterDisplay = '等級: 中級<br>';
         break;
     case 1:
-        greaterDisplay = '<br>等級: 初級';
+        greaterDisplay = '等級: 初級<br>';
         break;
     case 0:
-        greaterDisplay = '<br>等級: 高級';
+        greaterDisplay = '等級: 高級<br>';
         break;
 	case -1:
         greaterDisplay = ''; // 不顯示
@@ -229,7 +230,7 @@ switch (greaterValue) {
     default:
         greaterDisplay = ''; // 其他不顯示
 }
-			
+
 			// 等級限制
 			const minlvl = armor.min_lvl;
 			const minlvlDisplay = (minlvl && minlvl > 0) ? `等級: ${minlvl}<br>` : '';
@@ -389,8 +390,10 @@ switch (greaterValue) {
 					${registFreezeDisplay}
 					${registSustainDisplay}
 					${registBlindDisplay}
+					${(tradeableDisplay || deleteableDisplay || (armor.note && armor.note.trim() !== "")) ? `<br>備註:` : '' }
 					${tradeableDisplay}
 					${deleteableDisplay}
+					${armor.note && armor.note.trim() !== "" ? `<br>${armor.note}` : ''}
                 </div>
             `;
             

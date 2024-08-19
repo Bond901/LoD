@@ -260,10 +260,27 @@ document.addEventListener('DOMContentLoaded', function() {
 			const addCha = weapon.add_cha;
 			const addChaDisplay = (addCha && addCha !== '0') ? `<br>魅力 +${addCha}` : '';
 			
+			// 使用時限顯示
+			const usetime = parseInt(weapon.max_use_time, 10);
+			let usetimeDisplay = '';
+			if (!isNaN(usetime) && usetime > 0) {
+			const days = Math.floor(usetime / 86400);  // 計算天數 (86400秒 = 1天)
+			const hours = Math.floor((usetime % 86400) / 3600);  // 計算剩餘小時數
+			const minutes = Math.floor((usetime % 3600) / 60);  // 計算剩餘分鐘數
+			const seconds = usetime % 60;  // 剩餘的秒數
+			// 構建顯示的時間格式
+			let timeStr = '';
+			if (days > 0) timeStr += `${days}天 `;
+			if (hours > 0) timeStr += `${hours}小時 `;
+			if (minutes > 0) timeStr += `${minutes}分鐘 `;
+			if (seconds > 0) timeStr += `${seconds}秒`;
+			usetimeDisplay = `<br>使用時限${timeStr.trim()}`;
+			}
+
 			// 加速顯示
 			const hasteMap = {
 			'0': '',
-			'1': '<br>1段加速',
+			'1': '<br>人物速度 x1.33',
 			};
 			const hasteDisplay = hasteMap[weapon.haste_item] || ''; // 根據 haste_item 的值決定顯示內容
 			// 損壞顯示
@@ -308,11 +325,14 @@ document.addEventListener('DOMContentLoaded', function() {
 					${addDexDisplay}
 					${addIntDisplay}
 					${addWisDisplay}
-					${addChaDisplay}
+					${addChaDisplay}	
+					${(usetimeDisplay || tradeableDisplay || deleteableDisplay || hasteDisplay || (weapon.note && weapon.note.trim() !== "")) ? `<br>備註:` : '' }
+					${usetimeDisplay}
 					${tradeableDisplay}
 					${deleteableDisplay}
 					${hasteDisplay}
-					${canbedmgDisplay}			
+					${canbedmgDisplay}
+					${weapon.note && weapon.note.trim() !== "" ? `<br>備註:<br>${weapon.note}` : ''}
                 </div>
             `;
             
