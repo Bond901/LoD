@@ -1,11 +1,4 @@
-<html>
-<head>
-    <base href="https://lineagedatabase.example.com/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>道具製作 Item Making</title>
-    <style>
-        body, html {
+<html><head><base href="https://lineagedatabase.example.com/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>道具製作 Item Making</title><style>body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -73,23 +66,7 @@
             color: #e0e0e0;
             border: none;
             border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="header">
-	<h1>道具製作</h1>
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="搜索道具...">
-    </div>
-    <div class="blueprint-container" id="blueprint-list">
-        <!-- Blueprint items will be dynamically added here -->
-    </div>
-</div>
-
-<script>
-const blueprints = [
+        }</style></head><body><div class="container"><div class="header"><h1>道具製作</h1><div class="search-container"><input type="text" id="search-input" placeholder="搜索道具..."></div><div class="blueprint-container" id="blueprint-list"></div></div><script>const blueprints = [
     {
         title: "龍鱗護甲",
         description: "使用稀有的龍鱗製作的堅固護甲，提供極高的防禦力和魔法抗性。",
@@ -146,8 +123,4 @@ document.addEventListener('DOMContentLoaded', function() {
         );
         renderBlueprints(filteredBlueprints);
     });
-});
-</script>
-
-</body>
-</html>
+});</script></div></body></html>

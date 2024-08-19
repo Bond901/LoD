@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>道具資料 Item Data</title>
-    <style>
-        html, body {
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>道具資料 Item Data</title><style>html, body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -107,71 +100,7 @@
         .page-number.active {
             background-color: #ffd700;
             color: #1e1e1e;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="header">
-        <h1>道具資料庫</h1>
-    </div>
-    <div class="search-bar">
-        <input type="text" placeholder="搜索道具...">
-        <button>搜索</button>
-    </div>
-    <div class="item-grid">
-        <!-- 例子: 每個道具卡片 -->
-        <div class="item-card">
-            <div class="item-icon">🧪</div>
-            <div class="item-name">恢復藥水</div>
-            <div class="item-description">立即恢復500點生命值</div>
-        </div>
-        <div class="item-card">
-            <div class="item-icon">📜</div>
-            <div class="item-name">傳送卷軸</div>
-            <div class="item-description">可以立即傳送到指定城鎮</div>
-        </div>
-        <div class="item-card">
-            <div class="item-icon">💎</div>
-            <div class="item-name">魔法寶石</div>
-            <div class="item-description">可以用於強化裝備</div>
-        </div>
-		            <div class="item-card">
-                <div class="item-icon">🍖</div>
-                <div class="item-name">烤肉</div>
-                <div class="item-description">恢復50%的最大生命值</div>
-            </div>
-            <div class="item-card">
-                <div class="item-icon">🔑</div>
-                <div class="item-name">寶箱鑰匙</div>
-                <div class="item-description">可以開啟特殊寶箱</div>
-            </div>
-            <div class="item-card">
-                <div class="item-icon">📕</div>
-                <div class="item-name">技能書</div>
-                <div class="item-description">學習新的戰鬥技能</div>
-            </div>
-            <div class="item-card">
-                <div class="item-icon">🧭</div>
-                <div class="item-name">探索羅盤</div>
-                <div class="item-description">增加稀有物品的發現機率</div>
-            </div>
-            <div class="item-card">
-                <div class="item-icon">🎭</div>
-                <div class="item-name">變身卡片</div>
-                <div class="item-description">暫時變身為其他生物</div>
-            </div>
-        <!-- 更多道具卡片可放置在此 -->
-    </div>
-    <div class="pagination">
-        <div class="page-number active">1</div>
-        <div class="page-number">2</div>
-        <div class="page-number">3</div>
-        <!-- 更多頁碼可放置在此 -->
-    </div>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
+        }</style></head><body><div class="container"><div class="header"><h1>道具資料庫</h1></div><div class="search-bar"><input type="text" placeholder="搜索道具..."> <button>搜索</button></div><div class="item-grid"><div class="item-card"><div class="item-icon">🧪</div><div class="item-name">恢復藥水</div><div class="item-description">立即恢復500點生命值</div></div><div class="item-card"><div class="item-icon">📜</div><div class="item-name">傳送卷軸</div><div class="item-description">可以立即傳送到指定城鎮</div></div><div class="item-card"><div class="item-icon">💎</div><div class="item-name">魔法寶石</div><div class="item-description">可以用於強化裝備</div></div><div class="item-card"><div class="item-icon">🍖</div><div class="item-name">烤肉</div><div class="item-description">恢復50%的最大生命值</div></div><div class="item-card"><div class="item-icon">🔑</div><div class="item-name">寶箱鑰匙</div><div class="item-description">可以開啟特殊寶箱</div></div><div class="item-card"><div class="item-icon">📕</div><div class="item-name">技能書</div><div class="item-description">學習新的戰鬥技能</div></div><div class="item-card"><div class="item-icon">🧭</div><div class="item-name">探索羅盤</div><div class="item-description">增加稀有物品的發現機率</div></div><div class="item-card"><div class="item-icon">🎭</div><div class="item-name">變身卡片</div><div class="item-description">暫時變身為其他生物</div></div></div><div class="pagination"><div class="page-number active">1</div><div class="page-number">2</div><div class="page-number">3</div></div></div><script>document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.querySelector('.search-bar button');
     const searchInput = document.querySelector('.search-bar input');
     const pageNumbers = document.querySelectorAll('.page-number');
@@ -199,7 +128,4 @@ document.addEventListener('DOMContentLoaded', function() {
             // 實現道具詳細信息展示
         });
     });
-});
-</script>
-</body>
-</html>
+});</script></body></html>

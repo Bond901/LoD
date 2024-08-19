@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <base href="https://lineagedatabase.example.com/monsters/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>怪物資料 Monster Data</title>
-    <style>
-        html, body {
+<!DOCTYPE html><html lang="zh-TW"><head><base href="https://lineagedatabase.example.com/monsters/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>怪物資料 Monster Data</title><style>html, body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -108,76 +100,7 @@
         .page-number.active {
             background-color: #ffd700;
             color: #1e1e1e;
-        }
-    </style>
-</head>
-<body>
-    <div class="content">
-        <h1>怪物資料庫</h1>
-        <div class="search-bar">
-            <input type="text" placeholder="搜索怪物...">
-            <button>搜索</button>
-        </div>
-        <div class="monster-grid">
-            <div class="monster-card" onclick="showMonsterDetails('orc')">
-                <div class="monster-icon">👹</div>
-                <div class="monster-name">獸人</div>
-                <div class="monster-info">
-                    等級: 10-15<br>
-                    地點: 獸人村莊
-                </div>
-            </div>
-            <div class="monster-card" onclick="showMonsterDetails('skeleton')">
-                <div class="monster-icon">💀</div>
-                <div class="monster-name">骷髏戰士</div>
-                <div class="monster-info">
-                    等級: 20-25<br>
-                    地點: 遺忘墓地
-                </div>
-            </div>
-            <div class="monster-card" onclick="showMonsterDetails('dragon')">
-                <div class="monster-icon">🐉</div>
-                <div class="monster-name">巨龍</div>
-                <div class="monster-info">
-                    等級: 50-60<br>
-                    地點: 龍之峽谷
-                </div>
-            </div>
-            <div class="monster-card" onclick="showMonsterDetails('goblin')">
-                <div class="monster-icon">👺</div>
-                <div class="monster-name">哥布林</div>
-                <div class="monster-info">
-                    等級: 5-10<br>
-                    地點: 綠林地區
-                </div>
-            </div>
-            <div class="monster-card" onclick="showMonsterDetails('werewolf')">
-                <div class="monster-icon">🐺</div>
-                <div class="monster-name">狼人</div>
-                <div class="monster-info">
-                    等級: 30-35<br>
-                    地點: 月光森林
-                </div>
-            </div>
-            <div class="monster-card" onclick="showMonsterDetails('ghost')">
-                <div class="monster-icon">👻</div>
-                <div class="monster-name">幽靈</div>
-                <div class="monster-info">
-                    等級: 15-20<br>
-                    地點: 廢棄城堡
-                </div>
-            </div>
-        </div>
-        <div class="pagination">
-            <div class="page-number active">1</div>
-            <div class="page-number">2</div>
-            <div class="page-number">3</div>
-            <div class="page-number">4</div>
-            <div class="page-number">5</div>
-        </div>
-    </div>
-    <script>
-        function showMonsterDetails(monsterId) {
+        }</style></head><body><div class="content"><h1>怪物資料庫</h1><div class="search-bar"><input type="text" placeholder="搜索怪物..."> <button>搜索</button></div><div class="monster-grid"><div class="monster-card" onclick="showMonsterDetails('orc')"><div class="monster-icon">👹</div><div class="monster-name">獸人</div><div class="monster-info">等級: 10-15<br>地點: 獸人村莊</div></div><div class="monster-card" onclick="showMonsterDetails('skeleton')"><div class="monster-icon">💀</div><div class="monster-name">骷髏戰士</div><div class="monster-info">等級: 20-25<br>地點: 遺忘墓地</div></div><div class="monster-card" onclick="showMonsterDetails('dragon')"><div class="monster-icon">🐉</div><div class="monster-name">巨龍</div><div class="monster-info">等級: 50-60<br>地點: 龍之峽谷</div></div><div class="monster-card" onclick="showMonsterDetails('goblin')"><div class="monster-icon">👺</div><div class="monster-name">哥布林</div><div class="monster-info">等級: 5-10<br>地點: 綠林地區</div></div><div class="monster-card" onclick="showMonsterDetails('werewolf')"><div class="monster-icon">🐺</div><div class="monster-name">狼人</div><div class="monster-info">等級: 30-35<br>地點: 月光森林</div></div><div class="monster-card" onclick="showMonsterDetails('ghost')"><div class="monster-icon">👻</div><div class="monster-name">幽靈</div><div class="monster-info">等級: 15-20<br>地點: 廢棄城堡</div></div></div><div class="pagination"><div class="page-number active">1</div><div class="page-number">2</div><div class="page-number">3</div><div class="page-number">4</div><div class="page-number">5</div></div></div><script>function showMonsterDetails(monsterId) {
             console.log('Showing details for monster: ' + monsterId);
         }
 
@@ -198,7 +121,4 @@
                     console.log('Loading monster page ' + this.textContent);
                 });
             });
-        });
-    </script>
-</body>
-</html>
+        });</script></body></html>
