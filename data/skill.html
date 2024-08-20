@@ -9,7 +9,7 @@
         .content {
             padding: 20px;
             box-sizing: border-box;
-            height: 100%;
+            height: 100%; /* 確保內容區域覆蓋整個視窗 */
         }
 
         h1 {
@@ -116,6 +116,7 @@
                 pageNumbers.forEach(p => p.classList.remove('active'));
                 this.classList.add('active');
                 console.log('Loading skill page ' + this.textContent);
+                // 在此處實現分頁功能
             });
         });
 
@@ -123,6 +124,7 @@
             card.addEventListener('click', function() {
                 const skillName = this.querySelector('.skill-name').textContent;
                 console.log('Skill details for ' + skillName + ' loaded');
+                // 在此處加載和顯示選中技能的詳細資訊
             });
         });
     });</script></body></html>

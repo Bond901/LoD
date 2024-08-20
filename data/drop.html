@@ -1,0 +1,126 @@
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>物品掉落資料 DropItem Data</title><style>body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            flex-direction: column; /* 更改為縱向排列以填滿整個視窗 */
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #3c3c3c;
+            color: #e0e0e0;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffd700;
+            border: none;
+            cursor: pointer;
+        }
+        .filter-section {
+            margin-bottom: 20px;
+        }
+        .filter-section select {
+            padding: 5px;
+            margin-right: 10px;
+            background-color: #3c3c3c;
+            color: #e0e0e0;
+            border: 1px solid #4c4c4c;
+        }
+        .drop-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .drop-table th, .drop-table td {
+            border: 1px solid #4c4c4c;
+            padding: 10px;
+            text-align: left;
+        }
+        .drop-table th {
+            background-color: #3c3c3c;
+            color: #ffd700;
+        }
+        .drop-table tr:nth-child(even) {
+            background-color: #2c2c2c;
+        }
+        .drop-table tr:hover {
+            background-color: #4c4c4c;
+        }</style></head><body><div class="container"><div class="content"><div class="header"><h1>掉落查詢</h1></div><div class="search-bar"><input type="text" placeholder="輸入物品或怪物名稱..."> <button>搜索</button></div><div class="filter-section"><select id="item-type"><option value="">物品類型</option><option value="weapon">武器</option><option value="armor">防具</option><option value="potion">藥水</option><option value="material">材料</option></select> <select id="monster-level"><option value="">怪物等級</option><option value="1-10">1-10</option><option value="11-20">11-20</option><option value="21-30">21-30</option><option value="31+">31+</option></select> <select id="drop-rate"><option value="">掉落機率</option><option value="high">高</option><option value="medium">中</option><option value="low">低</option></select></div><table class="drop-table"><thead><tr><th>物品名稱</th><th>類型</th><th>怪物名稱</th><th>怪物等級</th><th>掉落機率</th><th>掉落地點</th></tr></thead><tbody><tr><td>銀光劍</td><td>武器</td><td>銀月狼</td><td>25</td><td>2%</td><td>月光森林</td></tr><tr><td>鋼鐵頭盔</td><td>防具</td><td>鐵甲哥布林</td><td>18</td><td>5%</td><td>哥布林洞穴</td></tr><tr><td>生命藥水</td><td>藥水</td><td>森林精靈</td><td>10</td><td>15%</td><td>精靈之森</td></tr><tr><td>龍鱗</td><td>材料</td><td>幼龍</td><td>35</td><td>1%</td><td>龍之巢穴</td></tr></tbody></table></div></div><script>document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.search-bar input');
+    const searchButton = document.querySelector('.search-bar button');
+    const itemTypeSelect = document.getElementById('item-type');
+    const monsterLevelSelect = document.getElementById('monster-level');
+    const dropRateSelect = document.getElementById('drop-rate');
+
+    searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const rows = document.querySelectorAll('.drop-table tbody tr');
+
+        rows.forEach(row => {
+            const itemName = row.cells[0].textContent.toLowerCase();
+            const monsterName = row.cells[2].textContent.toLowerCase();
+            if (itemName.includes(searchTerm) || monsterName.includes(searchTerm)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+
+    [itemTypeSelect, monsterLevelSelect, dropRateSelect].forEach(select => {
+        select.addEventListener('change', filterTable);
+    });
+
+    function filterTable() {
+        const itemType = itemTypeSelect.value;
+        const monsterLevel = monsterLevelSelect.value;
+        const dropRate = dropRateSelect.value;
+        const rows = document.querySelectorAll('.drop-table tbody tr');
+
+        rows.forEach(row => {
+            const rowItemType = row.cells[1].textContent;
+            const rowMonsterLevel = parseInt(row.cells[3].textContent);
+            const rowDropRate = parseFloat(row.cells[4].textContent);
+
+            let showRow = true;
+
+            if (itemType && rowItemType !== itemType) showRow = false;
+            if (monsterLevel) {
+                const [min, max] = monsterLevel.split('-').map(Number);
+                if (max && (rowMonsterLevel < min || rowMonsterLevel > max)) showRow = false;
+                if (!max && rowMonsterLevel < min) showRow = false;
+            }
+            if (dropRate) {
+                if (dropRate === 'high' && rowDropRate < 10) showRow = false;
+                if (dropRate === 'medium' && (rowDropRate < 5 || rowDropRate >= 10)) showRow = false;
+                if (dropRate === 'low' && rowDropRate >= 5) showRow = false;
+            }
+
+            row.style.display = showRow ? '' : 'none';
+        });
+    }
+});</script></body></html>

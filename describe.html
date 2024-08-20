@@ -1,4 +1,4 @@
-<html><head><base href="https://lineagedatabase.example.com/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>說明 Describe</title><style>body, html {
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>說明 Describe</title><style>body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -15,13 +15,23 @@
             font-size: 24px;
             font-weight: bold;
             color: #ffd700;
-            margin-bottom: 30px;
+            margin-bottom: -5px;
         }
-        h1, h2 {
-            font-size: 24px;
+		h1 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 22px;
             font-weight: bold;
             color: #ffd700;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+        }
+		h3 {
+            font-size: 16px;
+			color: #a0a0a0;
+            margin-top: 0px;
+			text-align: center;
         }
         .faq-item {
             margin-bottom: 20px;
@@ -30,13 +40,16 @@
             font-weight: bold;
             color: #ffd700;
             margin-bottom: 10px;
+			font-size: 16px;
         }
         .faq-answer {
             line-height: 1.6;
+			font-size: 16px;
         }
         .guide-list {
             list-style-type: none;
             padding: 0;
+            margin-top: 10px;
         }
         .guide-item {
             background-color: #3c3c3c;
@@ -44,29 +57,32 @@
             padding: 15px;
             border-radius: 5px;
             cursor: pointer;
+			font-size: 18px;
             transition: background-color 0.3s ease;
         }
         .guide-item:hover {
             background-color: #4c4c4c;
-        }</style></head><body><div class="container"><div class="header">說明中心</div><p>歡迎來到LoD的說明中心。這裡您可以找到關於遊戲和我們網站的常見問題解答，以及一些有用的遊戲指南。</p><h2>常見問題</h2><div class="faq-item"><div class="faq-question">Q: 如何使用這個網站？</div><div class="faq-answer">A: 我們的網站設計得非常直觀。使用選單可以瀏覽不同的部分，如武器、防具、怪物等。每個頁面上方都有搜索欄，可以快速找到您需要的信息。</div></div><div class="faq-item"><div class="faq-question">Q: 網站上的資料多久更新一次？</div><div class="faq-answer">A: 我們努力保持資料的即時性。通常在遊戲更新後的24小時內，我們就會更新相應的資訊。對於重大更新，我們會在首頁發布公告。</div></div><div class="faq-item"><div class="faq-question">Q: 我可以提交錯誤報告或建議嗎？</div><div class="faq-answer">A: 當然可以！我們非常歡迎玩家的反饋。請加入社群「Discord」。</div></div><h2>遊戲指南</h2><ul class="guide-list"><li class="guide-item" onclick="loadGuide('newbie')">新手入門指南</li><li class="guide-item" onclick="loadGuide('combat')">戰鬥系統詳解</li><li class="guide-item" onclick="loadGuide('crafting')">製作系統攻略</li><li class="guide-item" onclick="loadGuide('pvp')">PVP策略與技巧</li><li class="guide-item" onclick="loadGuide('economy')">遊戲經濟與交易指南</li></ul></div><script>function loadGuide(guideType) {
-    console.log('Loading guide: ' + guideType);
-    // Here you would typically load the corresponding guide content
-    // For example:
-    // fetch('/api/guides/' + guideType)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // Update the page content with the fetched guide data
-    //     });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
+        }
+        .guide-content {
+            display: none; /* 預設隱藏 */
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #2c2c2c;
+            border-radius: 5px;
+			font-size: 16px;
+			color: #ffd700;
+			line-height: 1.8; /* 調整這裡的數值來改變行距 */
+        }</style></head><body><div class="container"><div class="header">說明中心</div><h1>歡迎來到LoD的說明中心。這裡您可以找到關於遊戲和我們網站的常見問題解答，以及一些有用的遊戲指南。</h1><h2>常見問題</h2><div class="faq-item"><div class="faq-question">Q: 如何使用這個網站？</div><div class="faq-answer">A: 我們的網站設計得非常直觀。使用選單可以瀏覽不同的部分，如武器、防具、怪物等。每個頁面上方都有搜索欄，可以快速找到您需要的信息。</div></div><div class="faq-item"><div class="faq-question">Q: 網站上的資料多久更新一次？</div><div class="faq-answer">A: 我們努力保持資料的即時性。通常在遊戲更新後的24小時內，我們就會更新相應的資訊。對於重大更新，我們會在首頁發布公告。</div></div><div class="faq-item"><div class="faq-question">Q: 我可以提交錯誤報告或建議嗎？</div><div class="faq-answer">A: 當然可以！我們非常歡迎玩家的反饋。請加入社群「Discord」。</div></div><h2>遊戲指南</h2><ul class="guide-list"><li class="guide-item">新手入門指南<div class="guide-content">Lv.1 多加利用"新手導師"和"旅人諮詢員"快速提升等級。<br>Lv.13 旅人諮詢員可以購買象牙塔裝備強化卷軸，可以強化象牙塔和泡水的裝備。<br>Lv.20 旅人諮詢員可以免費領取象牙塔箭矢和購買魔法袋子，袋子可開出象牙塔補給品。<br>Lv.35 旅人諮詢員可以領取象牙塔飾品。<br>Lv.45 在村莊找貝爾教官參加訓練直接提升至52級。<br>Lv.52 達到指定經驗值百分比，可以找貝爾教官付費參加訓練。<br>Lv.60 商店有販售自殺藥水，使用後降到Lv.9。<br>村莊內的"天上聖母"可以領取媽祖的祝福buff，提高狩獵獲得的經驗。<br>透過村莊內的"全職業技能導師"可以學習基礎魔法，如果覺得貴可以到說話之島找"吉倫"。<br>說話之島往港口的方向有許多寵物等著被領養，出發前記得帶上漂浮之眼肉。</div></li><li class="guide-item">快速賺錢指南<div class="guide-content">tips1 在村莊找到"銀行管理員"，將多餘的金幣存入銀行，每小時產生1%利息。<br>tips2 用不到的魔法書、技能水晶可以販售給"亞丁商團"，有機會讓你一夜暴富。<br>tips3 夢幻之島的怪物會掉落高額金幣，怪物很強建議帶上寵物搭配遠距攻擊。<br>tips4 釣魚有機率釣到珍奇的烏龜，販售給"亞丁商團"可以帶來不錯的收入。</div></li><li class="guide-item">戰鬥系統詳解<div class="guide-content">古魯丁的"拉龐斯"可以購買高階魔法料理，使用後暫時提高能力和狩獵經驗。<br>"天寶商店"販售的強化戰鬥卷軸和古老秘藥可以同時使用。<br>"天寶商店"有販售成長型和究極型的魔法娃娃袋子，都可以帶來不錯的增益。</div></li><li class="guide-item">製作系統詳解<div class="guide-content">這裡是製作系統攻略的詳細內容。(未完成歡迎投稿)</div></li><li class="guide-item">寵物養成攻略<div class="guide-content">這裡是寵物養成攻略的詳細內容。(未完成歡迎投稿)</div></li><li class="guide-item">天寶獲取途徑<div class="guide-content">目前僅能透過狩獵特定地圖怪物和連線獎勵&禮盒獲取天寶。<br>正在規劃回收高階道具的NPC讓天寶更容易取得。</div></li></ul><h3>本網站及伺服器僅作為研究SQL資料庫及JAVA語法學習之使用，學習使用之相關檔案皆源於陸版遊戲，<br>無任何商業用途，如有侵權疑慮請立即來信告知。</h3></div><script>document.addEventListener('DOMContentLoaded', function() {
     const guideItems = document.querySelectorAll('.guide-item');
 
     guideItems.forEach(item => {
         item.addEventListener('click', function() {
-            guideItems.forEach(i => i.style.backgroundColor = '#3c3c3c');
-            this.style.backgroundColor = '#4c4c4c';
-            console.log('Guide selected: ' + this.textContent);
+            const content = this.querySelector('.guide-content');
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
         });
     });
 });</script></body></html>

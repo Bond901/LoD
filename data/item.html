@@ -1,29 +1,19 @@
-<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>道具資料 Item Data</title><style>html, body {
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>道具資料 Item Data</title><style>body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #1e1e1e;
             color: #e0e0e0;
             height: 100%;
-            overflow: auto;
         }
-        .container {
+        .content {
             padding: 20px;
+            height: 100%;
             box-sizing: border-box;
-            max-width: 1200px;
-            margin: auto;
         }
-        .header {
-            font-size: 24px;
-            font-weight: bold;
+        .content h1 {
             color: #ffd700;
-            margin-bottom: 30px;
-        }
-		.header h1 {
             font-size: 30px;
-            font-weight: bold;
-            color: #ffd700;
-            margin-bottom: 30px;
         }
         .search-bar {
             display: flex;
@@ -46,83 +36,51 @@
         }
         .item-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
         }
         .item-card {
             background-color: #3c3c3c;
             border-radius: 8px;
-            padding: 20px;
+            padding: 15px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            justify-content: center;
+            align-items: flex-start;
         }
         .item-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+        .item-card-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
         .item-icon {
-            width: 64px;
-            height: 64px;
-            background-color: #2c2c2c;
-            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 32px;
-            margin-bottom: 10px;
+            background-color: #000000;
+            border-radius: 8px;
+			border-radius: 8px;
+            margin-right: 10px;
+            width: 33px;
+            height: 33px;
+			overflow: hidden;
+        }
+        .item-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
         }
         .item-name {
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 5px;
             color: #ffd700;
+            margin-bottom: 10px;
         }
-        .item-description {
+        .item-stats {
             font-size: 14px;
-            text-align: center;
-            color: #b0b0b0;
-        }
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .page-number {
-            margin: 0 5px;
-            padding: 5px 10px;
-            background-color: #3c3c3c;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .page-number.active {
-            background-color: #ffd700;
-            color: #1e1e1e;
-        }</style></head><body><div class="container"><div class="header"><h1>道具資料庫</h1></div><div class="search-bar"><input type="text" placeholder="搜索道具..."> <button>搜索</button></div><div class="item-grid"><div class="item-card"><div class="item-icon">🧪</div><div class="item-name">恢復藥水</div><div class="item-description">立即恢復500點生命值</div></div><div class="item-card"><div class="item-icon">📜</div><div class="item-name">傳送卷軸</div><div class="item-description">可以立即傳送到指定城鎮</div></div><div class="item-card"><div class="item-icon">💎</div><div class="item-name">魔法寶石</div><div class="item-description">可以用於強化裝備</div></div><div class="item-card"><div class="item-icon">🍖</div><div class="item-name">烤肉</div><div class="item-description">恢復50%的最大生命值</div></div><div class="item-card"><div class="item-icon">🔑</div><div class="item-name">寶箱鑰匙</div><div class="item-description">可以開啟特殊寶箱</div></div><div class="item-card"><div class="item-icon">📕</div><div class="item-name">技能書</div><div class="item-description">學習新的戰鬥技能</div></div><div class="item-card"><div class="item-icon">🧭</div><div class="item-name">探索羅盤</div><div class="item-description">增加稀有物品的發現機率</div></div><div class="item-card"><div class="item-icon">🎭</div><div class="item-name">變身卡片</div><div class="item-description">暫時變身為其他生物</div></div></div><div class="pagination"><div class="page-number active">1</div><div class="page-number">2</div><div class="page-number">3</div></div></div><script>document.addEventListener('DOMContentLoaded', function() {
-    const searchButton = document.querySelector('.search-bar button');
-    const searchInput = document.querySelector('.search-bar input');
-    const pageNumbers = document.querySelectorAll('.page-number');
-    const itemCards = document.querySelectorAll('.item-card');
-
-    searchButton.addEventListener('click', function() {
-        const searchTerm = searchInput.value;
-        console.log('Searching for: ' + searchTerm);
-    });
-
-    pageNumbers.forEach(page => {
-        page.addEventListener('click', function() {
-            pageNumbers.forEach(p => p.classList.remove('active'));
-            this.classList.add('active');
-            console.log('Loading page ' + this.textContent);
-        });
-    });
-
-    itemCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const itemName = this.querySelector('.item-name').textContent;
-            console.log('Displaying details for: ' + itemName);
-        });
-    });
-});</script></body></html>
+        }</style></head><body><div class="content"><h1>道具資料庫</h1><div class="search-bar"><input type="text" placeholder="搜索道具..."> <button>搜索</button></div><div class="category-filter" style="margin-bottom: 20px;"><h3 style="color: #ffd700; margin-bottom: 10px;">依類型查詢：</h3><div style="display: flex; flex-wrap: wrap; gap: 10px;"><button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">所有</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">藥水</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">卷軸</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">袋子</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">技能</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">任務</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">其它</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">材料</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">寶石</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">食物</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">活動</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">箭矢</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">飛刀</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">圖騰</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">寵物</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">照明</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">煙火</button> <button class="category-btn" style="padding: 5px 10px; background-color: #3c3c3c; border: none; color: #e0e0e0; cursor: pointer; border-radius: 5px;">魔杖</button></div></div><div class="item-grid" id="item-grid"></div><br></div><script src="js/scriptitem.min.js"></script></body></html>

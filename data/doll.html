@@ -1,0 +1,117 @@
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>魔法娃娃資料 Doll Data</title><style>body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+			height: 100%; 
+        }
+        .container {
+            padding: 20px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .header {
+            font-weight: bold;
+            color: #ffd700;
+            font-size: 30px;
+			margin-bottom: 10px;
+        }
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #3c3c3c;
+            color: #e0e0e0;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffd700;
+            border: none;
+            cursor: pointer;
+        }
+        .magic-doll-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .magic-doll-card {
+            background-color: #3c3c3c;
+            border-radius: 10px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .magic-doll-card:hover {
+            transform: translateY(-5px);
+        }
+        .magic-doll-icon {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .magic-doll-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        .magic-doll-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .magic-doll-stats {
+            font-size: 12px;
+            color: #a0a0a0;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .page-number {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: #3c3c3c;
+            cursor: pointer;
+        }
+        .page-number.active {
+            background-color: #ffd700;
+            color: #1e1e1e;
+        }</style></head><body><div class="container"><div class="header">魔法娃娃資料庫</div><div class="search-bar"><input type="text" placeholder="搜索魔法娃娃..."> <button>搜索</button></div><div class="magic-doll-grid"><div class="magic-doll-card"><div class="magic-doll-icon">🧚</div><div class="magic-doll-name">光之精靈</div><div class="magic-doll-description">一個散發柔和光芒的小精靈，能夠提升周圍隊友的魔法防禦力。</div><div class="magic-doll-stats">魔法防禦 +10<br>光屬性抗性 +5%</div></div><div class="magic-doll-card"><div class="magic-doll-icon">🐉</div><div class="magic-doll-name">迷你龍</div><div class="magic-doll-description">一隻可愛的小龍，能夠噴射火焰進行遠程攻擊。</div><div class="magic-doll-stats">火屬性攻擊 +15<br>遠程攻擊力 +8%</div></div><div class="magic-doll-card"><div class="magic-doll-icon">🌳</div><div class="magic-doll-name">森林守護者</div><div class="magic-doll-description">一個由樹葉和藤蔓組成的小精靈，能夠治愈隊友並提供自然庇護。</div><div class="magic-doll-stats">治癒能力 +12<br>自然抗性 +7%</div></div><div class="magic-doll-card"><div class="magic-doll-icon">⚡</div><div class="magic-doll-name">閃電使者</div><div class="magic-doll-description">一個充滿電力的小精靈，能夠釋放強大的雷電攻擊。</div><div class="magic-doll-stats">雷屬性攻擊 +18<br>攻擊速度 +5%</div></div><div class="magic-doll-card"><div class="magic-doll-icon">🗿</div><div class="magic-doll-name">岩石守衛</div><div class="magic-doll-description">一個由堅硬岩石組成的小守衛，能夠大幅提升防禦力。</div><div class="magic-doll-stats">物理防禦 +20<br>體力恢復 +3/秒</div></div><div class="magic-doll-card"><div class="magic-doll-icon">🌊</div><div class="magic-doll-name">水之精靈</div><div class="magic-doll-description">一個由水滴組成的小精靈，能夠操控水流進行攻擊和防禦。</div><div class="magic-doll-stats">水屬性攻擊 +14<br>閃避率 +3%</div></div></div><div class="pagination"><div class="page-number active">1</div><div class="page-number">2</div><div class="page-number">3</div></div></div><script>document.addEventListener('DOMContentLoaded', function() {
+    const searchButton = document.querySelector('.search-bar button');
+    const searchInput = document.querySelector('.search-bar input');
+    const pageNumbers = document.querySelectorAll('.page-number');
+    const magicDollCards = document.querySelectorAll('.magic-doll-card');
+
+    searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value;
+        console.log('Searching for magic doll: ' + searchTerm);
+        // Implement search functionality for magic dolls here
+    });
+
+    pageNumbers.forEach(page => {
+        page.addEventListener('click', function() {
+            pageNumbers.forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            console.log('Loading magic doll page ' + this.textContent);
+            // Implement pagination functionality for magic dolls here
+        });
+    });
+
+    magicDollCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const dollName = this.querySelector('.magic-doll-name').textContent;
+            console.log('Viewing details for: ' + dollName);
+            // Implement detailed view for the selected magic doll
+        });
+    });
+});</script></body></html>

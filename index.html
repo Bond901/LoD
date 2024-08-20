@@ -4,16 +4,16 @@
             font-family: Arial, sans-serif;
             background-color: #1e1e1e;
             color: #e0e0e0;
-            height: 100%;
+            height: 100%; /* 確保 body 和 html 高度為 100% */
         }
         .container {
             display: flex;
-            height: 100vh;
+            height: 100vh; /* 高度設置為視口高度 */
             overflow: hidden;
             flex-direction: row;
         }
         .sidebar {
-            width: 250px;
+            width: 250px; /* 增加寬度以確保內容不擁擠 */
             background-color: #2c2c2c;
             padding: 20px;
             box-sizing: border-box;
@@ -89,6 +89,7 @@
             color: #ffd700;
         }
         
+        /* 媒體查詢：小螢幕設備 */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -99,7 +100,7 @@
                 padding: 10px;
             }
             .content {
-                padding: 10px;
+                padding: 10px; /* 在小螢幕上減少內邊距 */
             }
         }
         
@@ -116,7 +117,7 @@
             .feature-description {
                 font-size: 14px;
             }
-        }</style></head><body><div class="container"><div class="sidebar"><div class="logo"><a href="home.html" target="content-frame">LoD Guide</a></div><input type="text" class="search-bar" placeholder="Search..."><div class="menu-item"><a href="describe.html" target="content-frame">說明 Describe</a></div><div class="menu-item"><a href="update.html" target="content-frame">維護 Update</a></div><div class="menu-item"><a href="home.html" target="content-frame">指南 Guide</a></div><div class="menu-item"><a href="discord.html" target="content-frame">社群 Discord</a></div><div class="menu-item"><a href="youtube.html" target="content-frame">視頻 Youtube</a></div><div class="menu-item"><a href="https://drive.google.com/drive/folders/1hzzcQTXn4Ts1GWaIHT00zeCoRFsmvXPg?usp=drive_link" target="_blank">下載 Download</a></div></div><div class="content"><iframe name="content-frame" style="width: 100%; height: 100%; border: none;" src="home.html"></iframe></div></div><script>function loadFeature(feature) {
+        }</style></head><body><div class="container"><div class="sidebar"><div class="logo"><a href="home.html" target="content-frame">LoD Guide</a></div><input type="text" class="search-bar" placeholder="Search..."><div class="menu-item"><a href="describe.html" target="content-frame">說明 Describe</a></div><div class="menu-item"><a href="update.html" target="content-frame">維護 Update</a></div><div class="menu-item"><a href="home.html" target="content-frame">指南 Guide</a></div><div class="menu-item"><a href="https://discord.gg/7asHFgKu" target="_blank">社群 Discord</a></div><div class="menu-item"><a href="youtube.html" target="content-frame">視頻 Youtube</a></div><div class="menu-item"><a href="https://drive.google.com/drive/folders/1hzzcQTXn4Ts1GWaIHT00zeCoRFsmvXPg?usp=drive_link" target="_blank">下載 Download</a></div></div><div class="content"><iframe name="content-frame" style="width: 100%; height: 100%; border: none;" src="home.html"></iframe></div></div><script>function loadFeature(feature) {
             console.log('Loading feature: ' + feature);
         }
 
