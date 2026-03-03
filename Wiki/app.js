@@ -62,15 +62,15 @@
 
   async function loadAllData() {
     const [maps, npcs, spawns, drops, dropsMap, etcitems, weapons, armors, bosses] = await Promise.all([
-      loadJSON('data_json/mapids.json'),
-      loadJSON('data_json/npc.json'),
-      loadJSON('data_json/spawnlist.json'),
-      loadJSON('data_json/droplist.json'),
-      loadJSON('data_json/droplist_map.json'),
-      loadJSON('data_json/etcitem.json'),
-      loadJSON('data_json/weapon.json'),
-      loadJSON('data_json/armor.json'),
-      fetch('data_json/server_boss.json').then(r => r.ok ? r.json() : []),
+      loadJSON('Data_json/mapids.json'),
+      loadJSON('Data_json/npc.json'),
+      loadJSON('Data_json/spawnlist.json'),
+      loadJSON('Data_json/droplist.json'),
+      loadJSON('Data_json/droplist_map.json'),
+      loadJSON('Data_json/etcitem.json'),
+      loadJSON('Data_json/weapon.json'),
+      loadJSON('Data_json/armor.json'),
+      fetch('Data_json/server_boss.json').then(r => r.ok ? r.json() : []),
     ]);
 
     DATA.maps = maps;
@@ -788,3 +788,4 @@
 
   init();
 })();
+
