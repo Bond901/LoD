@@ -1,0 +1,72 @@
+[
+    {
+        "field": "id",
+        "annotation": "刷新設定編號",
+        "description": "伺服器端 BOSS 出現點的唯一識別碼。"
+    },
+    {
+        "field": "location",
+        "annotation": "BOSS 名稱/地點",
+        "description": "顯示該 BOSS 的名稱或其出沒的地點（如：巨大鱷魚、不死鳥）。"
+    },
+    {
+        "field": "count",
+        "annotation": "出現數量",
+        "description": "該設定點每次產生的 BOSS 數量，通常為 1。"
+    },
+    {
+        "field": "npc_templateid",
+        "annotation": "怪物模板 ID",
+        "description": "對應 npc.txt 中的 npcid，用於抓取 BOSS 的屬性。"
+    },
+    {
+        "field": "group_id",
+        "annotation": "群組編號",
+        "description": "用於定義特定 BOSS 群組的行為或聯動。"
+    },
+    {
+        "field": "locx1",
+        "annotation": "座標 X1",
+        "description": "BOSS 出現區域的起始 X 座標。"
+    },
+    {
+        "field": "locy1",
+        "annotation": "座標 Y1",
+        "description": "BOSS 出現區域的起始 Y 座標。"
+    },
+    {
+        "field": "locx2",
+        "annotation": "座標 X2",
+        "description": "BOSS 出現區域的結束 X 座標（若為 0 則代表固定點）。"
+    },
+    {
+        "field": "locy2",
+        "annotation": "座標 Y2",
+        "description": "BOSS 出現區域的結束 Y 座標（若為 0 則代表固定點）。"
+    },
+    {
+        "field": "heading",
+        "annotation": "面向方向",
+        "description": "BOSS 出現時的預設朝向。"
+    },
+    {
+        "field": "mapid",
+        "annotation": "地圖編號",
+        "description": "BOSS 所在的地圖編號，對應 mapids.txt。"
+    },
+    {
+        "field": "next_spawn_time",
+        "annotation": "下次刷新時間",
+        "description": "系統記錄的下一次 BOSS 出現的具體日期與時間。"
+    },
+    {
+        "field": "spawn_interval",
+        "annotation": "刷新間隔",
+        "description": "BOSS 死亡後再次刷新的間隔時間（單位通常為分鐘）。"
+    },
+    {
+        "field": "exist_time",
+        "annotation": "存在時間",
+        "description": "BOSS 出現後若未被擊殺，持續存在的分鐘數（0 代表不消失）。"
+    }
+]

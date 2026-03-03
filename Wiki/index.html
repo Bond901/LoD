@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="天堂怪物掉落物品查詢系統 - 依地圖或怪物名稱搜尋掉落資訊">
+  <title>怪物掉落物品查詢系統</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Loading Overlay -->
+  <div id="loading-overlay">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">載入資料中...</p>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">
+        <span class="title-icon">🐉</span>
+        怪物掉落物品查詢系統
+      </h1>
+      <p class="subtitle">查詢地圖怪物出沒與掉落物品資訊</p>
+    </header>
+
+    <!-- Tab Buttons -->
+    <div class="tab-container">
+      <button class="tab-btn active" id="tab-map" data-tab="map">
+        <span class="tab-icon">🗺️</span>
+        依地圖查詢
+      </button>
+      <button class="tab-btn" id="tab-monster" data-tab="monster">
+        <span class="tab-icon">👹</span>
+        依怪物查詢
+      </button>
+      <button class="tab-btn" id="tab-item" data-tab="item">
+        <span class="tab-icon">💎</span>
+        依道具查詢
+      </button>
+    </div>
+
+    <!-- Search Area -->
+    <div class="search-panel">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="輸入地圖名稱搜尋..." autocomplete="off">
+        <button class="clear-btn" id="clear-btn" title="清除">✕</button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Results Area -->
+    <div class="results-panel" id="results-panel">
+      <!-- Map Mode Result -->
+      <div class="result-content" id="result-map" style="display:none;">
+        <div class="result-header" id="map-header"></div>
+        <div class="monster-list" id="map-monster-list"></div>
+      </div>
+
+      <!-- Monster Mode Result -->
+      <div class="result-content" id="result-monster" style="display:none;">
+        <div class="result-header" id="monster-header"></div>
+        <div class="monster-maps" id="monster-maps"></div>
+        <div class="drop-section" id="monster-drops"></div>
+      </div>
+
+      <!-- Item Mode Result -->
+      <div class="result-content" id="result-item" style="display:none;">
+        <div class="result-header" id="item-header"></div>
+        <div class="item-dropper-list" id="item-dropper-list"></div>
+      </div>
+
+      <!-- Placeholder -->
+      <div class="placeholder" id="placeholder">
+        <div class="placeholder-icon">📜</div>
+        <p>請從上方搜尋並選擇地圖或怪物</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>LoD Guide-遊戲資料庫-查詢系統 <br> 最後更新時間：2026/03/04</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

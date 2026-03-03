@@ -1,0 +1,317 @@
+[
+    {
+        "field": "npcid",
+        "annotation": "NPC 編號",
+        "description": "NPC/怪物的唯一識別碼，對應 spawnlist 的 npc_templateid 及 droplist 的 mobId。"
+    },
+    {
+        "field": "name",
+        "annotation": "NPC 名稱",
+        "description": "NPC 的名稱 (一般文字，如：侏儒、物品升級專員)"
+    },
+    {
+        "field": "nameid",
+        "annotation": "NPC 名稱標識符",
+        "description": "對應客戶端 desc-?.tbl 中的多國語言字串編號 (例如：$xxxx)"
+    },
+    {
+        "field": "classname",
+        "annotation": "Class 類別路徑",
+        "description": "獨立執行的 Class 類別路徑 (例如 com.lineage.data.npc.xxx)，用來綁定對話、動作或死亡時的特殊任務邏輯"
+    },
+    {
+        "field": "impl",
+        "annotation": "實作類型",
+        "description": "定義該物件在核心中的實體物件類別 (例如：L1Monster、L1Merchant、L1Guard 等)"
+    },
+    {
+        "field": "gfxid",
+        "annotation": "外觀圖形編號",
+        "description": "NPC 的外觀圖形編號 (Sprite ID)"
+    },
+    {
+        "field": "lvl",
+        "annotation": "等級",
+        "description": "NPC 的基礎等級"
+    },
+    {
+        "field": "hp",
+        "annotation": "最大生命值",
+        "description": "NPC 基礎最大生命值 (HP)"
+    },
+    {
+        "field": "mp",
+        "annotation": "最大魔力值",
+        "description": "NPC 基礎最大魔力值 (MP)"
+    },
+    {
+        "field": "ac",
+        "annotation": "防禦力",
+        "description": "NPC 基礎防禦力"
+    },
+    {
+        "field": "str",
+        "annotation": "力量",
+        "description": "NPC 基礎力量屬性"
+    },
+    {
+        "field": "con",
+        "annotation": "體質",
+        "description": "NPC 基礎體質屬性"
+    },
+    {
+        "field": "dex",
+        "annotation": "敏捷",
+        "description": "NPC 基礎敏捷屬性"
+    },
+    {
+        "field": "wis",
+        "annotation": "精神",
+        "description": "NPC 基礎精神屬性"
+    },
+    {
+        "field": "intel",
+        "annotation": "智力",
+        "description": "NPC 基礎智力屬性"
+    },
+    {
+        "field": "mr",
+        "annotation": "魔法防禦力",
+        "description": "NPC 的魔法防禦力 (抗魔)"
+    },
+    {
+        "field": "exp",
+        "annotation": "經驗值",
+        "description": "擊殺後玩家可獲得的基礎經驗值"
+    },
+    {
+        "field": "lawful",
+        "annotation": "正義值",
+        "description": "擊殺該 NPC 後，玩家會增加或減少的正義值"
+    },
+    {
+        "field": "size",
+        "annotation": "體型大小",
+        "description": "體型大小，分為 large (大型) 或 small (小型)，影響武器大小怪傷害判定"
+    },
+    {
+        "field": "weakAttr",
+        "annotation": "弱點魔法屬性",
+        "description": "害怕的魔法屬性。設定值如：1(地)、2(火)、4(水)、8(風)、-1(抗地) 等"
+    },
+    {
+        "field": "ranged",
+        "annotation": "攻擊距離",
+        "description": "NPC 的攻擊距離 (格數)"
+    },
+    {
+        "field": "tamable",
+        "annotation": "可否迷魅/抓取",
+        "description": "是否可以被玩家使用迷魅術或抓取為寵物 (true/false)"
+    },
+    {
+        "field": "passispeed",
+        "annotation": "移動速度",
+        "description": "移動時的影格延遲時間"
+    },
+    {
+        "field": "atkspeed",
+        "annotation": "攻擊速度",
+        "description": "物理攻擊時的影格延遲時間"
+    },
+    {
+        "field": "atk_magic_speed",
+        "annotation": "魔法攻擊速度",
+        "description": "魔法攻擊時的影格延遲時間"
+    },
+    {
+        "field": "sub_magic_speed",
+        "annotation": "輔助魔法速度",
+        "description": "施展輔助魔法時的影格延遲時間"
+    },
+    {
+        "field": "undead",
+        "annotation": "不死系屬性",
+        "description": "不死系分類。0:無, 1:不死系, 2:惡魔系, 3:殭屍系, 4:特殊不死系(治癒術無傷害/不可起死回生), 5:狼人系, 6:龍系"
+    },
+    {
+        "field": "poison_atk",
+        "annotation": "毒屬性攻擊",
+        "description": "是否帶有毒屬性攻擊"
+    },
+    {
+        "field": "paralysis_atk",
+        "annotation": "麻痺屬性攻擊",
+        "description": "是否帶有麻痺屬性攻擊"
+    },
+    {
+        "field": "agro",
+        "annotation": "主動攻擊",
+        "description": "是否為主動攻擊怪 (true/false)"
+    },
+    {
+        "field": "agrososc",
+        "annotation": "變形探知",
+        "description": "是否會主動識破並攻擊變身的玩家"
+    },
+    {
+        "field": "agrocoi",
+        "annotation": "隱身探知",
+        "description": "是否會主動發現並攻擊隱身的玩家"
+    },
+    {
+        "field": "family",
+        "annotation": "家族/群組",
+        "description": "家族/群組名稱，用於設定同族群的互助機制"
+    },
+    {
+        "field": "agrofamily",
+        "annotation": "同族互助",
+        "description": "同族互助設定。1 代表同種族會互相幫助；大於 1 代表會支援所有 NPC"
+    },
+    {
+        "field": "agrogfxid1",
+        "annotation": "變身圖形 ID 1",
+        "description": "怪物被激怒或特定狀態下的變身圖形 ID (1)"
+    },
+    {
+        "field": "agrogfxid2",
+        "annotation": "變身圖形 ID 2",
+        "description": "怪物被激怒或特定狀態下的變身圖形 ID (2)"
+    },
+    {
+        "field": "picupitem",
+        "annotation": "撿取物品",
+        "description": "怪物是否會撿取地上的物品 (true/false)"
+    },
+    {
+        "field": "digestitem",
+        "annotation": "消化物品時間",
+        "description": "吃掉(消化)撿取道具所需的時間 (秒)"
+    },
+    {
+        "field": "bravespeed",
+        "annotation": "勇水狀態",
+        "description": "怪物是否天生擁有勇氣藥水 (二段加速) 效果"
+    },
+    {
+        "field": "hprinterval",
+        "annotation": "HP 回復間隔",
+        "description": "HP 自然回復的間隔時間"
+    },
+    {
+        "field": "hpr",
+        "annotation": "HP 回復量",
+        "description": "HP 單次自然回復量"
+    },
+    {
+        "field": "mprinterval",
+        "annotation": "MP 回復間隔",
+        "description": "MP 自然回復的間隔時間"
+    },
+    {
+        "field": "mpr",
+        "annotation": "MP 回復量",
+        "description": "MP 單次自然回復量"
+    },
+    {
+        "field": "teleport",
+        "annotation": "瞬間移動",
+        "description": "怪物在追擊玩家時，是否會使用瞬間移動 (true/false)"
+    },
+    {
+        "field": "randomlevel",
+        "annotation": "隨機等級",
+        "description": "設定怪物生成時允許的隨機等級浮動範圍"
+    },
+    {
+        "field": "randomhp",
+        "annotation": "隨機血量",
+        "description": "設定怪物生成時允許的隨機血量浮動範圍"
+    },
+    {
+        "field": "randommp",
+        "annotation": "隨機魔力",
+        "description": "設定怪物生成時允許的隨機魔力浮動範圍"
+    },
+    {
+        "field": "randomac",
+        "annotation": "隨機防禦",
+        "description": "設定怪物生成時允許的隨機防禦浮動範圍"
+    },
+    {
+        "field": "randomexp",
+        "annotation": "隨機經驗值",
+        "description": "設定怪物生成時允許的隨機經驗值浮動範圍"
+    },
+    {
+        "field": "randomlawful",
+        "annotation": "隨機正義值",
+        "description": "設定怪物生成時允許的隨機正義值浮動範圍"
+    },
+    {
+        "field": "damage_reduction",
+        "annotation": "傷害減免",
+        "description": "物理傷害減免數值"
+    },
+    {
+        "field": "hard",
+        "annotation": "硬皮屬性",
+        "description": "是否為硬皮怪 (玩家用近戰武器攻擊時會損傷武器)"
+    },
+    {
+        "field": "doppel",
+        "annotation": "變形怪屬性",
+        "description": "是否為變形怪屬性"
+    },
+    {
+        "field": "IsTU",
+        "annotation": "可被起死回生",
+        "description": "是否可被法術「起死回生術 (Turn Undead)」消滅"
+    },
+    {
+        "field": "IsErase",
+        "annotation": "可被魔法消除",
+        "description": "是否可被法術「光裂術 / 魔法消除」消滅"
+    },
+    {
+        "field": "bowActId",
+        "annotation": "弓箭動畫 ID",
+        "description": "弓箭攻擊時的動畫 ID"
+    },
+    {
+        "field": "karma",
+        "annotation": "陣營友好度",
+        "description": "擊殺該 NPC 後，影響的陣營友好度 (業障值)"
+    },
+    {
+        "field": "transform_id",
+        "annotation": "變身 ID",
+        "description": "通常用於 BOSS 死亡或特定條件後變身為下一個階段的 NPC 編號"
+    },
+    {
+        "field": "transform_gfxid",
+        "annotation": "變身動畫 ID",
+        "description": "變身過程中的動畫圖形 ID"
+    },
+    {
+        "field": "light_size",
+        "annotation": "發光範圍",
+        "description": "NPC 本身自帶的發光範圍大小"
+    },
+    {
+        "field": "amount_fixed",
+        "annotation": "召喚數量固定",
+        "description": "召喚數量是否固定。若為 true，生成數量將不受伺服器怪物倍率設定影響"
+    },
+    {
+        "field": "change_head",
+        "annotation": "改變面向",
+        "description": "是否會改變面向"
+    },
+    {
+        "field": "cant_resurrect",
+        "annotation": "不可復活",
+        "description": "是否不可被復活 (true/false)"
+    }
+]

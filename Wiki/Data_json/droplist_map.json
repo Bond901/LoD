@@ -1,0 +1,442 @@
+[
+  {
+    "mobid": 99002,
+    "mapid": 8000,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "憤怒的鳴釜",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99001,
+    "mapid": 8000,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "鳴釜",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99003,
+    "mapid": 8000,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "鐮鼬",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99004,
+    "mapid": 8000,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "迅捷的鐮鼬",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99005,
+    "mapid": 8000,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "河童",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99018,
+    "mapid": 8002,
+    "itemid": 85004,
+    "min": 10,
+    "max": 20,
+    "chance": 1000000,
+    "note": "白面金毛殺生石",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99017,
+    "mapid": 8002,
+    "itemid": 85004,
+    "min": 10,
+    "max": 20,
+    "chance": 1000000,
+    "note": "白面金毛九尾狐",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99016,
+    "mapid": 8002,
+    "itemid": 85004,
+    "min": 10,
+    "max": 20,
+    "chance": 1000000,
+    "note": "白面金毛玉藻前",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99018,
+    "mapid": 8002,
+    "itemid": 85005,
+    "min": 1,
+    "max": 5,
+    "chance": 100000,
+    "note": "白面金毛殺生石",
+    "itemnote": "金條"
+  },
+  {
+    "mobid": 99017,
+    "mapid": 8002,
+    "itemid": 85005,
+    "min": 1,
+    "max": 5,
+    "chance": 100000,
+    "note": "白面金毛九尾狐",
+    "itemnote": "金條"
+  },
+  {
+    "mobid": 99016,
+    "mapid": 8002,
+    "itemid": 85005,
+    "min": 1,
+    "max": 5,
+    "chance": 100000,
+    "note": "白面金毛玉藻前",
+    "itemnote": "金條"
+  },
+  {
+    "mobid": 99018,
+    "mapid": 8002,
+    "itemid": 85006,
+    "min": 1,
+    "max": 1,
+    "chance": 10000,
+    "note": "白面金毛殺生石",
+    "itemnote": "老舊的茶杯"
+  },
+  {
+    "mobid": 99017,
+    "mapid": 8002,
+    "itemid": 85006,
+    "min": 1,
+    "max": 1,
+    "chance": 10000,
+    "note": "白面金毛九尾狐",
+    "itemnote": "老舊的茶杯"
+  },
+  {
+    "mobid": 99016,
+    "mapid": 8002,
+    "itemid": 85006,
+    "min": 1,
+    "max": 1,
+    "chance": 10000,
+    "note": "白面金毛玉藻前",
+    "itemnote": "老舊的茶杯"
+  },
+  {
+    "mobid": 99014,
+    "mapid": 8001,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "天狗",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99011,
+    "mapid": 8003,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "毒夜",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99010,
+    "mapid": 8003,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "唐傘小僧",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99025,
+    "mapid": 8001,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "夜",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99024,
+    "mapid": 8001,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "河太郎",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99014,
+    "mapid": 8001,
+    "itemid": 60221,
+    "min": 1,
+    "max": 2,
+    "chance": 333333,
+    "note": "天狗",
+    "itemnote": "魔法卷軸 (聖結界)"
+  },
+  {
+    "mobid": 99009,
+    "mapid": 8003,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "轆轤首",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99011,
+    "mapid": 8001,
+    "itemid": 49138,
+    "min": 1,
+    "max": 2,
+    "chance": 333333,
+    "note": "毒夜",
+    "itemnote": "巧克力蛋糕"
+  },
+  {
+    "mobid": 99010,
+    "mapid": 8001,
+    "itemid": 49138,
+    "min": 1,
+    "max": 2,
+    "chance": 333333,
+    "note": "唐傘小僧",
+    "itemnote": "巧克力蛋糕"
+  },
+  {
+    "mobid": 99009,
+    "mapid": 8001,
+    "itemid": 49138,
+    "min": 1,
+    "max": 2,
+    "chance": 333333,
+    "note": "轆轤首",
+    "itemnote": "巧克力蛋糕"
+  },
+  {
+    "mobid": 99005,
+    "mapid": 8000,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "河童",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99004,
+    "mapid": 8000,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "迅捷的鐮鼬",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99003,
+    "mapid": 8000,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "鐮鼬",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99016,
+    "mapid": 8002,
+    "itemid": 44070,
+    "min": 1,
+    "max": 20,
+    "chance": 1000000,
+    "note": "白面金毛玉藻前",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99017,
+    "mapid": 8002,
+    "itemid": 44070,
+    "min": 1,
+    "max": 20,
+    "chance": 1000000,
+    "note": "白面金毛九尾狐",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99018,
+    "mapid": 8002,
+    "itemid": 44070,
+    "min": 1,
+    "max": 20,
+    "chance": 1000000,
+    "note": "白面金毛殺生石",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99012,
+    "mapid": 8003,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "\\f3赤鬼",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99013,
+    "mapid": 8003,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "青鬼",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99015,
+    "mapid": 8003,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "阿修羅像",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99001,
+    "mapid": 8000,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "鳴釜",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99002,
+    "mapid": 8000,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "憤怒的鳴釜",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99031,
+    "mapid": 8001,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "飢餓骷髏",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99032,
+    "mapid": 8001,
+    "itemid": 44070,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "飢餓喪屍",
+    "itemnote": "天寶"
+  },
+  {
+    "mobid": 99025,
+    "mapid": 8001,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "夜",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99024,
+    "mapid": 8001,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "河太郎",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99011,
+    "mapid": 8001,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "毒夜",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99010,
+    "mapid": 8001,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "唐傘小僧",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99009,
+    "mapid": 8001,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "轆轤首",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99031,
+    "mapid": 8001,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "飢餓骷髏",
+    "itemnote": "沙金"
+  },
+  {
+    "mobid": 99032,
+    "mapid": 8001,
+    "itemid": 85004,
+    "min": 1,
+    "max": 10,
+    "chance": 1000000,
+    "note": "飢餓喪屍",
+    "itemnote": "沙金"
+  }
+]
