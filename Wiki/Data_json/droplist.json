@@ -39559,7 +39559,7 @@
     "itemId": 40076,
     "min": 1,
     "max": 1,
-    "chance": 800,
+    "chance": 1000,
     "note": "古代的卷軸",
     "mobnote": "飛龍"
   },
@@ -45670,7 +45670,7 @@
     "itemId": 40076,
     "min": 1,
     "max": 1,
-    "chance": 800,
+    "chance": 1000,
     "note": "古代的卷軸",
     "mobnote": "邪惡蜥蜴"
   },
@@ -53365,7 +53365,7 @@
     "itemId": 40076,
     "min": 1,
     "max": 1,
-    "chance": 800,
+    "chance": 1000,
     "note": "古代的卷軸",
     "mobnote": "變形怪"
   },
@@ -54436,7 +54436,7 @@
     "itemId": 40076,
     "min": 1,
     "max": 1,
-    "chance": 800,
+    "chance": 1000,
     "note": "古代的卷軸",
     "mobnote": "巨斧牛人"
   },
@@ -58999,7 +58999,7 @@
     "itemId": 40076,
     "min": 1,
     "max": 1,
-    "chance": 800,
+    "chance": 1000,
     "note": "古代的卷軸",
     "mobnote": "巨斧牛人"
   },
@@ -62257,7 +62257,7 @@
     "itemId": 40076,
     "min": 1,
     "max": 1,
-    "chance": 800,
+    "chance": 1000,
     "note": "古代的卷軸",
     "mobnote": "亞力安"
   },
@@ -103297,7 +103297,7 @@
     "itemId": 40238,
     "min": 1,
     "max": 1,
-    "chance": 10000,
+    "chance": 2500,
     "note": "精靈水晶(魂體轉換)",
     "mobnote": "寶物怪【活鎧甲】"
   },
